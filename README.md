@@ -1,5 +1,6 @@
 # P4wnP1-A.L.O.A-Payloads
 Payloads I use on my P4wnP1 A.L.O.A.
+All of my payloads use the US keyboard layout
 ### *I am NOT responsible for what you do with theese payloads*
 Please read the MIT license for more info
 

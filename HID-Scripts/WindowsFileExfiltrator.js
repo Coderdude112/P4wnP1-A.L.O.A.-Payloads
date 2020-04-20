@@ -1,6 +1,7 @@
 // Windows File Exfiltrator
 // author: Saytonic https://youtu.be/I_BjCdJlCo4
 // edited by: Coderdude112 on GitHub 
+// For config help go to Saytonic's video found here: https://youtu.be/I_BjCdJlCo4
 
 layout('us');			// Set keyboard layout to US
  

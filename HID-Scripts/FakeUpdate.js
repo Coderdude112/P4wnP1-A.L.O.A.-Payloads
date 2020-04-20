@@ -7,6 +7,7 @@ typingSpeed(0,0);	// TYPE FAST!
 press("GUI r");
 delay(500);
 // Select your OS option by un-commenting that line
+
 //type("iexplore -k http://fakeupdate.net/xp/\n") 		// Windows XP
 //type("iexplore -k http://fakeupdate.net/vista/\n") 	// Windows Vista
 //type("iexplore -k http://fakeupdate.net/win7/\n") 	// Windows 7

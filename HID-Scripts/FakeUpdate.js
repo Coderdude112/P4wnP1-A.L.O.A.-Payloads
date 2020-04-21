@@ -1,6 +1,6 @@
 // Fake update
-// author: Judge2020 https://judge2020.com
-// edited by: Coderdude112 on GitHub 
+// Author: Judge2020 https://judge2020.com
+// Edited by: Coderdude112 on GitHub 
 // Pressing enter on the update screen will display a fake BSOD screen
 layout('us');		// US keyboard layout
 typingSpeed(0,0);	// TYPE FAST!

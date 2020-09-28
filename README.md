@@ -1,21 +1,15 @@
 # P4wnP1-A.L.O.A.-Payloads
 
-Payloads I use on my P4wnP1 A.L.O.A.
-
 All of my payloads use the **US** keyboard layout
+Please read the MIT license for more info on what you can do with my payloads
 
-### *How to use my payloads*
+### How to use my payloads
 
-* HID scripts should be placed in `/usr/local/P4wnP1/HIDScripts` or you can just copy and paste them into the HIDScripts section of the web editor
+* HID scripts should be placed in `/usr/local/P4wnP1/HIDScripts`, or you can just copy and paste the scripts to the "HIDScripts" section of the web interface and save it there
+* If you need to install some package on the Pi that requires internet access please see [this](https://youtu.be/QEWaIoal5qU) video
+  * **Note:** This video is not made by me, but I found it useful
+  * After doing the instructions on this video the IP of P4wnP1 should be `172.16.0.1:8000`
 
-* Bash scripts should be placed in `/usr/local/P4wnP1/scripts`
-   Bash scripts can be run with a trigger and can be configured on the trigger actions tab of the web editor
+## I am NOT responsible for what you do with these payloads
 
-* If you need to install some package on the pi that requires internet access please see [this](https://youtu.be/QEWaIoal5qU) video. 
-
-   *Note this video is not made by me.* After doing the instructions on this video the IP of P4wnP1 is `172.16.0.1:8000` 
-
-### *I am NOT responsible for what you do with these payloads*
-
-Please read the MIT license for more info
-
+## I assume ZERO responsibility for what you do with these payloads

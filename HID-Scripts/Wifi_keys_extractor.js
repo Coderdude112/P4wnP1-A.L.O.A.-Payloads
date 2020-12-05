@@ -1,5 +1,5 @@
 /*###########################################################################
-# Wifi_keys_exfiltrator.js                                                  #
+# Wifi_keys_extractor.js                                                    #
 # Author: PingDucKY https://github.com/PingDucKY/payloads-P4wnP1-A.L.O.A    #
 # Edited by: Coderdude112 on GitHub                                         #
 # This script exfiltrates the Wifi keys for all known networks on a device  #
